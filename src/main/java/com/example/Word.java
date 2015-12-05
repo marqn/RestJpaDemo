@@ -17,8 +17,27 @@ public class Word {
     public String first;
     public String second;
 
-    public Word(String first, String second) {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirst(String first) {
         this.first = first;
+    }
+
+    public void setSecond(String second) {
         this.second = second;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirst() {
+        return first;
+    }
+
+    public String getSecond() {
+        return second;
     }
 }
