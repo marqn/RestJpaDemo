@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+    <h2>Dodawanie wyrazów</h2>
+
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input ng-model="firstText" type="text" class="form-control" placeholder="Wyraz pierwszy" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input ng-model="secondText" type="text" class="form-control" placeholder="Wyraz drugi" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="row">
+        <button type="button" ng-click="clearAll()" class="btn btn-warning">Wyczyść</button>
+        <button type="button" ng-click="sendWord()" class="btn btn-danger">Zapisz</button>
+    </div>
+
+    <p>
+        {{ message }}
+    </p>
+
+</div>
