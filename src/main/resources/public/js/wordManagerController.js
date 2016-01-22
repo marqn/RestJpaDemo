@@ -17,14 +17,14 @@ app.controller('wordManagerController', function ($scope, $http) {
             url: "/words",
             method: "POST",
             data: data,
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json', 'charset':'utf-8'}
         }).success(function (data, status, headers, config) {
             $scope.message = "send succesfull: " + status;
             $scope.clearAll();
         }).error(function (data, status, headers, config) {
             $scope.message = status + ' ' + headers;
         });
-    }
+    };
 
 
 });

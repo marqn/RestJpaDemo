@@ -16,6 +16,10 @@ app.config(['$routeProvider',
             when('/addWord', {
                 templateUrl: 'pages/addWord.html',
                 controller: 'wordManagerController'
+            }).
+            when('/listOfWords', {
+                templateUrl: 'pages/listOfWords.html',
+                controller: 'listOfWordsController'
             });
     }]);
 
