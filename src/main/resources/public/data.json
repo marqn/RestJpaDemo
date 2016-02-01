@@ -1,0 +1,116 @@
+{
+  "words": [
+    {
+      "first": "no meetings over the weekend",
+      "second": "żadnych zebrań w czasie weekendu",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": null,
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/3"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/3"
+        }
+      }
+    },
+    {
+      "first": "enjoy yourself",
+      "second": "baw sie dobrze",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2015-12-06T12:43:10.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/4"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/4"
+        }
+      }
+    },
+    {
+      "first": "very serious matters",
+      "second": "bardzo powazne sprawy",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2015-12-06T12:45:19.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/5"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/5"
+        }
+      }
+    },
+    {
+      "first": "particularly",
+      "second": "szczególnie",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2015-12-08T06:01:29.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/7"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/7"
+        }
+      }
+    },
+    {
+      "first": "all sorts of people",
+      "second": "wszelkiego rodzaju ludzie",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2015-12-08T06:02:51.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/8"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/8"
+        }
+      }
+    },
+    {
+      "first": "mothersss!!",
+      "second": "mamssss",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2016-01-17T20:44:50.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/10"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/10"
+        }
+      }
+    },
+    {
+      "first": "supreme",
+      "second": "wyjątkowy, najważniejszy",
+      "refresh": null,
+      "wiem": null,
+      "niewiem": null,
+      "createdData": "2015-12-20T20:30:20.000+0000",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/words/11"
+        },
+        "word": {
+          "href": "http://localhost:8080/words/11"
+        }
+      }
+    }
+  ]
+}

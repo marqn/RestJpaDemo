@@ -1,0 +1,28 @@
+<div ng-hide="isSummary">
+
+    <div layout="column" layout-align="center center">
+        <p>{{ numberOfWords - wordIndex }} / {{ numberOfWords }}</p>
+
+        <div flex><p class="customfont">{{ first }}</p></div>
+        <div flex><p class="customfont">{{ second }}</p></div>
+    </div>
+
+    <div layout="row" layout-align="center center" ng-hide="isChecked" class="check-element animate-show">
+        <md-button ng-click="clickAction('wiem')" class="md-raised md-primary">Wiem</md-button>
+        <md-button ng-click="clickAction('niewiem')" class="md-raised md-primary">Niewiem</md-button>
+    </div>
+
+    <div layout="row" layout-align="center center" ng-show="isChecked" class="check-element animate-show">
+        <md-button ng-click="clickAction()" class="md-raised md-primary" style="width:200px;">Sprawdź</md-button>
+    </div>
+
+
+</div>
+
+<div layout="column" layout-align="center center" id="summary" ng-show="isSummary">
+    <h1>Podsumowanie</h1>
+    <h3>ilość słów:{{numberOfWords}}</h3>
+    <h3>Znane:{{wiemCount}}</h3>
+    <h3>Do powtórki:{{niewiemCount}}</h3>
+    <md-button class="md-raised md-primary" href="#/menuLearn" style="width:200px;">Wróć do menu</md-button>
+</div>

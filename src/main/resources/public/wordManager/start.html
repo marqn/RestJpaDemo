@@ -1,0 +1,29 @@
+<div ng-controller="AppCtrl" ng-cloak>
+    <md-content>
+        <md-list>
+            <md-subheader class="md-no-sticky">Lista słówek:</md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="item in todos">
+                <img ng-src="{{item.face}}?{{$index}}" alt="{{item.who}}"/>
+
+                <div class="md-list-item-text" layout="column">
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>pierwszy</label>
+                            <input ng-model="item.who">
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>drugi</label>
+                            <input ng-model="item.what">
+                        </md-input-container>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                            <md-button class="md-raised md-warn">Usuń</md-button>
+                            <md-button class="md-raised md-primary">Zapisz</md-button>
+                        </section>
+                    </div>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+
+</div>
