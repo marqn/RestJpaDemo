@@ -93,7 +93,6 @@ angular.module('app').controller('learnController', ['$scope', '$http', function
     function updateWord(item) {
         $http.patch(item._links.word.href, item).success(function (data, status) {
             console.log("status:" + status);
-            console.log(data);
         }).error(function(data, status) {
             console.log(data + "Request failed. " + status);
         });

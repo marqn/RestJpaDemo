@@ -8,12 +8,12 @@
     </div>
 
     <div layout="row" layout-align="center center" ng-hide="isChecked" class="check-element animate-show">
-        <md-button ng-click="clickAction('wiem')" class="md-raised md-primary">Wiem</md-button>
-        <md-button ng-click="clickAction('niewiem')" class="md-raised md-primary">Niewiem</md-button>
+        <md-button ng-click="clickAction()" class="md-raised md-primary" style="width:200px;">Sprawdź</md-button>
     </div>
 
     <div layout="row" layout-align="center center" ng-show="isChecked" class="check-element animate-show">
-        <md-button ng-click="clickAction()" class="md-raised md-primary" style="width:200px;">Sprawdź</md-button>
+        <md-button ng-click="clickAction('wiem')" class="md-raised md-primary">Wiedziałem</md-button>
+        <md-button ng-click="clickAction('niewiem')" class="md-raised md-primary">Nie wiedziałem</md-button>
     </div>
 
 
