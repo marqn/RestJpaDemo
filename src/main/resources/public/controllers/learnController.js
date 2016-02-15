@@ -3,26 +3,35 @@ angular.module('app').controller('learnController', ['$scope', '$http', function
     // **********  VARIABLES  ******************
     var wordsTab, randomTab, typeOfGame, currentWordItem;
 
+    $scope.project = {
+        iloscWybranychSlowek: 0,
+    };
+
     $scope.numberOfWords = "0";
     $scope.wordIndex;
     $scope.isChecked = false;
     $scope.isSummary = false;
     $scope.wiemCount = false;
     $scope.niewiemCount = false;
+    $scope.isLearnState = false;
 
-    // **********  FUNCTIONS  ******************
+// **********  NG FUNCTIONS  ******************************************************************************************
     $http.get("/words").success(function (data) {
 
         wordsTab = data._embedded.words;
+        console.log("słówka załadowane");
+    }).error(function (data, status) {
+        console.log("status:" + status);
 
-        $scope.wordIndex = $scope.numberOfWords = wordsTab.length;
+        /*
+         $mdToast.show(
+         $mdToast.simple()
+         .textContent('Błąd połączenia z bazą danych')
+         .position(top)
+         .hideDelay(3000)
+         );
+         */
 
-        resetData();
-        randomTab = randomizeOrder($scope.wordIndex);
-        nextWord();
-
-        console.log("typeOfGame:" + typeOfGame);
-        //console.log(randomTab);
     });
 
     $scope.clickAction = function (typeButton) {
@@ -43,9 +52,25 @@ angular.module('app').controller('learnController', ['$scope', '$http', function
         }
     };
 
+    $scope.navigateToPage = function (page, _typeOfGame) {
+        console.log("$scope.isLearnState:" + $scope.isLearnState);
+        if (page === "learn") {
+            $scope.isLearnState = true;
+            typeOfGame = _typeOfGame;
+
+            $scope.wordIndex = $scope.numberOfWords = wordsTab.length;
+
+            resetData();
+            randomTab = randomizeOrder($scope.wordIndex);
+            nextWord();
+        } else if (page === "menuLearn") {
+            $scope.isLearnState = false;
+        }
+    }
+
+// **********  FUNCTIONS  ******************************************************************************************
     function resetData() {
         currentWordItem = [];
-        typeOfGame = $_GET('f');
         $scope.niewiemCount = $scope.wiemCount = 0;
     }
 
@@ -93,7 +118,7 @@ angular.module('app').controller('learnController', ['$scope', '$http', function
     function updateWord(item) {
         $http.patch(item._links.word.href, item).success(function (data, status) {
             console.log("status:" + status);
-        }).error(function(data, status) {
+        }).error(function (data, status) {
             console.log(data + "Request failed. " + status);
         });
     }
@@ -123,20 +148,5 @@ angular.module('app').controller('learnController', ['$scope', '$http', function
         if ($scope.wordIndex <= 0) {
             $scope.isSummary = true;
         }
-    }
-
-    function $_GET(param) {
-        var vars = {};
-        window.location.href.replace(
-            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-            function (m, key, value) { // callback
-                vars[key] = value !== undefined ? value : '';
-            }
-        );
-
-        if (param) {
-            return vars[param] ? vars[param] : null;
-        }
-        return vars;
     }
 }]);

@@ -1,28 +1,57 @@
-<div ng-hide="isSummary">
+<div ng-hide="isLearnState" layout="column" layout-align="center center">
+    <h1 class="md-display-2">Tryb nauki!</h1>
 
     <div layout="column" layout-align="center center">
-        <p>{{ numberOfWords - wordIndex }} / {{ numberOfWords }}</p>
+        <md-input-container class="md-block">
+            <label>Ilość słówek:</label>
 
-        <div flex><p class="customfont">{{ first }}</p></div>
-        <div flex><p class="customfont">{{ second }}</p></div>
+            <input required type="number" step="any" name="rate" ng-model="project.iloscWybranychSlowek" value="5" min="5" max="wordIndex"
+                   ng-pattern="/^12$/"/>
+        </md-input-container>
+
+        <md-radio-group ng-model="data.group1">
+            <md-radio-button value="all" class="md-primary">Wszystkie</md-radio-button>
+            <md-radio-button value="repeat">Tylko do powtórki</md-radio-button>
+        </md-radio-group>
     </div>
+    <div layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary" ng-click="navigateToPage('learn', 0)" >Pierwsze -> Drugie</md-button>
 
-    <div layout="row" layout-align="center center" ng-hide="isChecked" class="check-element animate-show">
-        <md-button ng-click="clickAction()" class="md-raised md-primary" style="width:200px;">Sprawdź</md-button>
+        <md-button class="md-raised md-primary" ng-click="navigateToPage('learn', 1)" >Drugie -> Pierwsze</md-button>
     </div>
-
-    <div layout="row" layout-align="center center" ng-show="isChecked" class="check-element animate-show">
-        <md-button ng-click="clickAction('wiem')" class="md-raised md-primary">Wiedziałem</md-button>
-        <md-button ng-click="clickAction('niewiem')" class="md-raised md-primary">Nie wiedziałem</md-button>
-    </div>
-
-
 </div>
 
-<div layout="column" layout-align="center center" id="summary" ng-show="isSummary">
-    <h1>Podsumowanie</h1>
-    <h3>ilość słów:{{numberOfWords}}</h3>
-    <h3>Znane:{{wiemCount}}</h3>
-    <h3>Do powtórki:{{niewiemCount}}</h3>
-    <md-button class="md-raised md-primary" href="#/menuLearn" style="width:200px;">Wróć do menu</md-button>
+
+
+
+<div ng-show="isLearnState">
+    <div ng-hide="isSummary">
+
+        <div layout="column" layout-align="center center">
+            <p>{{ numberOfWords - wordIndex }} / {{ numberOfWords }}</p>
+
+            <div flex><p class="customfont">{{ first }}</p></div>
+            <div flex><p class="customfont">{{ second }}</p></div>
+        </div>
+
+        <div layout="row" layout-align="center center" ng-hide="isChecked" class="check-element animate-show">
+            <md-button ng-click="clickAction()" class="md-raised md-primary" style="width:200px;">Sprawdź</md-button>
+        </div>
+
+        <div layout="row" layout-align="center center" ng-show="isChecked" class="check-element animate-show">
+            <md-button ng-click="clickAction('wiem')" class="md-raised md-primary">Wiedziałem</md-button>
+            <md-button ng-click="clickAction('niewiem')" class="md-raised md-primary">Nie wiedziałem</md-button>
+        </div>
+    </div>
+
+    <div layout="column" layout-align="center center" id="summary" ng-show="isSummary">
+        <h1>Podsumowanie</h1>
+
+        <h3>ilość słów:{{numberOfWords}}</h3>
+
+        <h3>Znane:{{wiemCount}}</h3>
+
+        <h3>Do powtórki:{{niewiemCount}}</h3>
+        <md-button class="md-raised md-primary" ng-click="navigateToPage('menuLearn')" style="width:200px;">Wróć do menu</md-button>
+    </div>
 </div>
